@@ -1,0 +1,52 @@
+1. Suppose that an ordered list of numbers is implemented by means of an array, Write a C program using separate functions to 
+   i.	   Insert a number
+   ii.	   Delete an element
+   iii.	   Reverse the list
+
+   Write the main program where an initial list is created and a user is prompted to ask which operation (insert, delete, reverse or quit) the user wants to perform, Depending on the user response, more inputs may be taken and the resultant list is printed after each operation by the user. The main program continues unless the user chooses ``quit´´ operation.
+
+2. Write a C program for string manipulation
+   i.	 To find the string length
+   ii.	 Reverse the string
+   iii.	 To check if the string is palindrome
+   iv.	 String concatenation
+   v.	 Extracting a sub string from a given string
+   vi.	 To convert the string into uppercase and lowercase
+
+3. Write a C program for 
+   i.	 Adding two polynomials where a polynomial is implemented by an array of records.
+   ii.	 Multiplying two polynomials where a polynomial is implemented by an array of records.
+
+4. Write a C program for
+   i.	 Adding two sparse matrices and transposing a sparse matrix where a sparse matrix is implemented by an array of records.
+
+5. Repeat exercise 1 for ordered list which are implemented by single connected linked list
+   i.	  Singly connected Linked list.
+   ii.	  Doubly connected Linked list.
+   iii.	  Circular Linked list.
+
+6. Write a C program using separate functions to implement the following operations for stack data structure
+   i.	 Insert a number
+   ii.	 Delete a element
+   iii.	 Display the list
+
+7. Write a C program using separate functions to implement the following operations for Queue data structure
+   i.	 Insert a number
+   ii.	 Delete an element
+   iii.	 Display the list
+
+8. Write a C program to convert an infix expression to postfix and evaluate a postfix expresssion.
+
+9. Write a C program to
+   i.	 Create a Binary search tree
+   ii. 	 Search an element an element from Binary Searcch tree
+   iii.	 Insert an element in a binary search tree
+   iv.	 Delete a node from a binary search tree
+
+10. Write a C program to implement Merge sort recursively
+11. Write a C program to implement Quick sort
+    i.	  recursively
+    ii.	  non-recursively
+
+12. Write a C program to implement Heap sort
+
