@@ -13,10 +13,9 @@ void array_print(int *a, size_t size)
 }
 
 int array_insert(int *a, size_t size, int element, size_t position)
-/* Inserts the `element to the array `a', of size `size' in the `position'.
-The `size' should be the size of the array upto which it was filled.
+/* Inserts the `element' to the array `a'.The`size' denotes the number of current elements in the array. The `element' is inserted at a[position].
+The `size' should not be the size of the array allocated.
 The function will check if the position specified is within the size specified.
-Specifying the `position' as i will cause a[i] to have the value `element'.
 It returns a positive integer if the insertion was successful else returns a false
 with the error printed on stderr*/
 {
@@ -28,7 +27,7 @@ with the error printed on stderr*/
     }
   int *p=a+position;//the pointer to the location where the new element will get inserted
   a=a+size;//a points to one past the last element of original array
-  while(a!=p)
+  while(a>p)
     *(a--)=*(a-1);
   *a=element;
   return 1;
