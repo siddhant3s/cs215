@@ -27,8 +27,7 @@ with the error printed on stderr*/
     }
   int *p=a+position;//the pointer to the location where the new element will get inserted
   a+=size;//a points to one past the last element of original array
-  while(a>p)
-    *(a--)=*(a-1);
+  while(a>p)    *(a--)=*(a-1);
   *a=element;
   return 1;
 }
@@ -46,9 +45,20 @@ else returns a positive integer.*/
     }
   int *last=a+size-1;// points to the last element
   a+=position;//a now points to the position of the deltetion
-  while(a<last) *a++=*(a+1);
+  while(a<last) *(a++)=*(a+1);
   return 1;
 }
+
+void array_reverse(int *a, size_t size)
+/* Reverses the array `a'. The `size' represents the number of elements in `a'*/
+{
+  int i,t;
+  for(i=0; i < size/2 ; i++)
+    {
+      t=a[i]; a[i]=a[size-i-1]; a[size-i-1]=t;
+    }
+}
+
 
 int main()
 {
@@ -59,6 +69,8 @@ int main()
   array_insert(a,5,7,3);
   printf("\n");array_print(a,s);
   array_delete(a,6,2);
+  printf("\n");array_print(a,s);
+  array_reverse(a,5);
   printf("\n");array_print(a,s);
   
   return 0;
