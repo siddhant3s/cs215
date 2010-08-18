@@ -27,7 +27,7 @@ with the error printed on stderr*/
     }
   int *p=a+position;//the pointer to the location where the new element will get inserted
   a+=size;//a points to one past the last element of original array
-  while(a>p)    *(a--)=*(a-1);
+  while(a>p)    *(a)=*(a-1),a--;
   *a=element;
   return 1;
 }
@@ -45,7 +45,7 @@ else returns a positive integer.*/
     }
   int *last=a+size-1;// points to the last element
   a+=position;//a now points to the position of the deltetion
-  while(a<last) *(a++)=*(a+1);
+  while(a<last) *(a)=*(a+1),a++;
   return 1;
 }
 
