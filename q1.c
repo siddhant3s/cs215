@@ -6,7 +6,7 @@
 */
 #include <stdio.h>
 
-int array_print(int *a, size_t size)
+void array_print(int *a, size_t size)
 {
   while(size--)
     printf("%i ",*a++);
@@ -29,11 +29,11 @@ with the error printed on stderr*/
   int *p=a+position;//the pointer to the location where the new element will get inserted
   a=a+size;//a points to one past the last element of original array
   while(a!=p)
-      *a--=*(a-1);
+    *(a--)=*(a-1);
   *a=element;
   return 1;
 }
-main()
+int main()
 {
   int a[10]={5,4,1,2,5};
   size_t s=(sizeof a)/(sizeof *a);
@@ -41,4 +41,5 @@ main()
   array_print(a,s);
   array_insert(a,5,121,5);
   array_print(a,s);
+  return 0;
 }
