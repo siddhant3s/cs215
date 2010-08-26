@@ -59,11 +59,70 @@ void array_reverse(int *a, size_t size)
     }
 }
 
-
+void input_array(int *a, size_t size)
+/*Inputs from cin*/
+{
+  while(size--)
+    scanf("%i",a++);
+}
+  
 int main()
 {
-  int a[10]={5,4,1,2,5};
-  size_t s=(sizeof a)/(sizeof *a);
+  const MAX = 20;
+  int a[MAX];
+ 
+  printf("With How many numbers do you wanto start with?");
+  size_t s;
+  scanf("%i", &s);
+  printf("Enter the array:");
+  input_array(a,s);
+  char i;
+  do{
+    printf("\nWhat do you want to do?"
+	   "\n 1. Insert an element.\n 2. Delete an element \n 3. Reverse"
+	   "\n 4. Display \n 5. Exit\n");
+    
+    scanf("%c", &i);
+    switch(i)
+      {
+      case '1':
+	{
+	  printf("Enter the Position (zero-based) and the element to be inserted:");
+	  int e;
+	  size_t p;
+	  scanf("%i%i",&p,&e);
+	  array_insert(a,s,e,p);
+	  s++;
+	  printf("Done!\n");
+	  break;
+	}
+      case '2':
+	{
+	  printf("Enter the position at which you want to delete the element:");
+	  size_t p;
+	  scanf("%i",&p);
+	  array_delete(a,s,p);
+	  s--;
+	  printf("Done!\n");
+	  break;
+	}
+      case '3':
+	{
+	  array_reverse(a,s);
+	  printf("Done!\n");
+	  break;
+	}
+      case '4':
+	{
+	  printf("\n");
+	  array_print(a,s);
+	  printf("\n\n");
+	  break;
+	}
+      }
+  }while(i!='5');
+    /*
+	  
   //printf("Size:%i",s);
   array_print(a,s);
   array_insert(a,5,7,3);
@@ -72,6 +131,6 @@ int main()
   printf("\n");array_print(a,s);
   array_reverse(a,5);
   printf("\n");array_print(a,s);
-  
+    */
   return 0;
 }
