@@ -12,7 +12,7 @@ It should be represented in the array as
        +----+----+----+----+
        |  0 |  1 |  2 |  3 | <---Array Subscript
        |--------------------
-       | 14 | 62 | 41 | 14 | <---Coffecients
+       | 79 | 41 | 62 | 14 | <---Coffecients
        +-------------------+
 */
 
@@ -72,14 +72,14 @@ void print_pol(int *a, size_t deg)
 	
 int main()
 {
-  int pol1[]={1,1};
+  int pol1[]={1,1,2};
   size_t deg1=((sizeof pol1)/sizeof(*pol1))-1;
 
   int pol2[]={1,1};
   size_t deg2=((sizeof pol2)/sizeof(*pol2))-1;
   int pol3[7];
   add_poly(pol1,deg1,pol2,deg2,pol3);
-  print_pol(pol3,1);
+  print_pol(pol3,2);
 
   mul_poly(pol1,deg1,pol2,deg2,pol3);
   print_pol(pol3,deg1+deg2);
