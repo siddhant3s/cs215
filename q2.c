@@ -53,9 +53,8 @@ size_t strlen(char *s)
 }
 void strrev(char* s)
 {
-    size_t l=-1;
+    size_t l=-1, i=0;
     while (s[++l]);
-    size_t i=0;
     for (i=0;i<l/2;++i)
     {
         char t=s[i];
@@ -63,7 +62,7 @@ void strrev(char* s)
         s[l-i-1]=t;
     }
 }
-int main()
+int main(void)
 {
     const size_t MAXLEN=50;
     char s1[50]="The First String";
