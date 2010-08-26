@@ -59,10 +59,9 @@ void print_pol(int *a, size_t deg)
   while(1)
     {
       printf(" +%iX^%i",a[deg],deg);
-      if(deg) deg--;//TODO: ADD COMMENT
+      if(deg) deg--;/*TODO: ADD COMMENT*/
       else
       {
-	//printf(" +%iX^%i",a[deg],deg);
 	break;
       }
     }
@@ -83,4 +82,5 @@ int main()
 
   mul_poly(pol1,deg1,pol2,deg2,pol3);
   print_pol(pol3,deg1+deg2);
+  return 0;
 }
