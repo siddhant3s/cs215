@@ -5,20 +5,20 @@ ii. Multiplying two polynomials where a polynomial is implemented by an array of
 */
 #include <stdio.h>
 
-/*The Polynomial is represented by an array of its cofficient on the respective
+/*The Polynomial is represented by an array of its coefficients on the respective
 Position of the exponent:
 Say we have a Polynomial P(x): 14x^3 + 62x^2 + 41x + 79
 It should be represented in the array as 
        +----+----+----+----+
        |  0 |  1 |  2 |  3 | <---Array Subscript
        |--------------------
-       | 79 | 41 | 62 | 14 | <---Coffecients
+       | 79 | 41 | 62 | 14 | <---Coefficients
        +-------------------+
 */
 
 void add_poly(int *a, size_t dega, int *b, size_t degb, int *c)
 {
-  size_t maxdeg,mindeg;
+  size_t maxdeg,mindeg,i;
   int *maxpol,*minpol;
   if(dega>degb)
     {
@@ -31,7 +31,6 @@ void add_poly(int *a, size_t dega, int *b, size_t degb, int *c)
       maxpol=b;    minpol=b;
     }
   
-  size_t i;
   for(i=0; i <= mindeg ; i++)
     c[i]=a[i]+b[i];
   for(; i <= maxdeg ; i++)
@@ -48,9 +47,9 @@ void mul_poly(int *a, size_t dega, int *b, size_t degb, int *c)
     {
       size_t j;
       for(j=0; j<= degb; j++)
-	{
-	  c[i+j]+=a[i]*a[j];
-	}
+        {
+          c[i+j]+=a[i]*a[j];
+        }
     }
 }
 
@@ -60,15 +59,12 @@ void print_pol(int *a, size_t deg)
     {
       printf(" +%iX^%i",a[deg],deg);
       if(deg) deg--;/*TODO: ADD COMMENT*/
-      else
-      {
-	break;
-      }
+      else break;
     }
   printf("\n");
 }
 
-	
+    
 int main()
 {
   int pol1[]={1,1,2};
