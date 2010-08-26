@@ -102,5 +102,6 @@ int main(void)
     printf("strcmp over s1 and s2=%i",strcmp(s1,s2));
     printf("stricmp over s1 and s2=%i",stricmp(s1,s2));
 
+    return 0;
 }
 
