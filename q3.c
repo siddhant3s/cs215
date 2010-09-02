@@ -121,8 +121,6 @@ void test_print_pol(void)
    the result is printed on the screen together with the expected result.
    If the result computed by add_poly() didn't match the expected result, 
    then there's most likely a bug in the add_poly() function.
-   
-   NOTE:: This function is not C89 compliant.
 */
 void test_add_poly(void)
 {
@@ -134,6 +132,7 @@ void test_add_poly(void)
   */
   
   /* Testcase 1: degree(poly_a) == degree(poly_b) */
+  {
   int poly_a[] = {2, -3, 5};  /* +5X^2-3X+2 */
   int deg_a = (sizeof(poly_a) / sizeof(*poly_a)) - 1;
   
@@ -150,8 +149,10 @@ void test_add_poly(void)
   add_poly(poly_a, deg_a, poly_b, deg_b, poly_c);
   print_pol(poly_c, 2);
   printf("Expected: -4X^2+3X+1\n");
+  }
   
   /* Testcase 2: degree(poly_d) <  degree(poly_e) */
+  {
   int poly_d[] = {-6, 0, 4};  /* +4X^2-6 */
   int deg_d = (sizeof(poly_d) / sizeof(*poly_d)) - 1;
   
@@ -168,8 +169,10 @@ void test_add_poly(void)
   add_poly(poly_d, deg_d, poly_e, deg_e, poly_f);
   print_pol(poly_f, 3);
   printf("Expected: +3X^3+2X^2-5\n");
+  }
   
   /* Testcase 3: degree(poly_g) >  degree(poly_h) */
+  {
   int poly_g[] = {-5, 3, -1, 7, -12};  /* -12X^4+7X^3-X^2+3X-5 */
   int deg_g = (sizeof(poly_g) / sizeof(*poly_g)) - 1;
   
@@ -186,6 +189,7 @@ void test_add_poly(void)
   add_poly(poly_g, deg_g, poly_h, deg_h, poly_i);
   print_pol(poly_i, 4);
   printf("Expected: -12X^4+7X^3+4X^2-5\n");
+  }
 }
 
 int main(void)
